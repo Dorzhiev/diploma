@@ -16,6 +16,7 @@ import calcTab from './modules/calcTab';
 import calcResult from './modules/calcResult';
 import btnMore from './modules/btnMore';
 import checkList from './modules/checkList';
+import popupDiscount from './modules/popupDiscount';
 import popupConsult from './modules/popupConsult';
 
 //модальное окно (1)
@@ -34,5 +35,7 @@ calcResult();
 btnMore();
 //окно checkList
 checkList();
+//скидка
+popupDiscount();
 //консультация
 popupConsult();

@@ -1,6 +1,6 @@
-const popupConsult = () => {
-    const discountBtn = document.querySelectorAll('.consultation-btn');
-    const popup = document.querySelector('.popup-consultation');
+const popupDiscount = () => {
+    const discountBtn = document.querySelectorAll('.discount-btn');
+    const popup = document.querySelector('.popup-discount');
 
     discountBtn.forEach((elem) => {
         elem.addEventListener('click', () => {
@@ -22,4 +22,4 @@ const popupConsult = () => {
     });
 };
 
-export default popupConsult;
+export default popupDiscount;

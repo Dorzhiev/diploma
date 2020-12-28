@@ -5,7 +5,7 @@ const errorMessage = 'ошибка..',
     const form = document.querySelectorAll('form');
 
     const statusMessage = document.createElement('div');
-    statusMessage.style.cssText = 'font-size: 2rem; color: black;';
+    statusMessage.style.cssText = 'font-size: 2rem; color: #85be32;';
 
     form.forEach(item => item.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -56,7 +56,7 @@ const errorMessage = 'ошибка..',
         item.addEventListener('input', (event) => {
             const target = event.target;
             if (target.matches('input')) {
-                target.value = target.value.replace(/(?!^\+)\D/g, '');
+                target.value = target.value.replace(/(?!^\+)\D/g, '').substr(0,13);
             }
         });
     });
@@ -66,9 +66,16 @@ const errorMessage = 'ошибка..',
         item.addEventListener('input', (event) => {
             const target = event.target;
             if (target.matches('input')) {
-                target.value = target.value.replace(/(?![а-яА-Я])\D|[0-9]/g, '');
+                target.value = target.value.replace(/(?![а-яА-Я])\D|[0-9]/g, '').substr(0,21);
             }
         });
+    });
+
+    const formMessage = document.querySelector('.user-quest');
+    formMessage.addEventListener('input', (event) => {
+        const target = event.target;
+        target.value = target.value.replace(/[^а-яА-Я\s\,\.\?\!\-\;\:]/g, '').substr(0,30);
+
     });
 
  
