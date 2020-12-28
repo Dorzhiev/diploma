@@ -12,6 +12,7 @@ import toggleMenu from './modules/toggleMenu';
 import sendForms from './modules/sendForms';
 import formsValid from './modules/formsValid';
 import tabs from './modules/tabs';
+import tabs2 from './modules/tabs2';
 import calcTab from './modules/calcTab';
 import calcResult from './modules/calcResult';
 import btnMore from './modules/btnMore';
@@ -27,6 +28,8 @@ sendForms();
 formsValid();
 //аккардеон (3)
 tabs();
+//аккардеон2
+tabs2();
 //аккардеон калькулятор
 calcTab();
 //калькулятор рассчеты
