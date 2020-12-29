@@ -6,7 +6,7 @@ const formsValid = () => {
     phones.forEach((e) => {
         e.addEventListener('input', () => {
 
-            e.setAttribute('pattern', '[+][0-9]{11}');
+            e.setAttribute('pattern', '[+][0-9]{7,11}');
             if (!e.value) {
                 e.setAttribute('placeholder', '+7XXXXXXXXXX');
             } else {

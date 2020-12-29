@@ -6,10 +6,10 @@ const data = {
     arrDiam: [],
     arrDiamCount: [],
     distHouse: 0,
-    calcResult: 0
+    calcResult: 0,
 };
-const calcResult = () => {
 
+const calcResult = () => {
 
     let calcRes = document.getElementById('calc-result');
 
