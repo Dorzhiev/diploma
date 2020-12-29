@@ -1,27 +1,43 @@
 import { data } from './calcResult';
 const toggleMenu = () => {
-    const callBtn = document.querySelectorAll('.call-btn');
-    const popup = document.querySelector('.popup-call');
 
-    callBtn.forEach((elem) => {
+    const callBtns = document.querySelectorAll('.call-btn'),
+        popupCall = document.querySelector('.popup-call');
+
+    callBtns.forEach((elem) => {
+
         elem.addEventListener('click', () => {
-            popup.style.display = 'block';
+            popupCall.style.display = 'block';
+
+            // При открытии окна переносим  объект data в скрытый инпут в окне
+            const calcRes = document.getElementById('calc-result');
+            const inputData = popupCall.querySelector('[name="data_form"]');
+            // console.log(inputData);
+            if (data) {
+                inputData.value = JSON.stringify(data);
+            };
+            calcRes.value = '';
+
+            data.diam = 0;
+            data.diamCount = 0;
+
         });
     });
 
-    popup.addEventListener('click', (event) => {
+    popupCall.addEventListener('click', (event) => {
         let target = event.target;
 
-        if(target.classList.contains('popup-close')){
-            popup.style.display = 'none';
+        if (target.classList.contains('popup-close')) {
+            popupCall.style.display = 'none';
+            event.preventDefault();
         } else {
-            target = target.closest('.popup-content');
-            if(!target){
-                popup.style.display = 'none';
-            }
-        }
-    })
- 
+            target = target.closest('.popup-dialog');
+
+            if (!target) {
+                popupCall.style.display = 'none';
+            };
+        };
+    });
 };
 
 export default toggleMenu;
